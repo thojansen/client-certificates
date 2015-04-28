@@ -1,0 +1,7 @@
+- run ```./setup.sh``` in /ssl and export client certificate with pw test
+- run ```node server.js```
+- ```curl -v --cacert ssl/rootCA.crt https://localhost:5000/``` should return 401
+- ```curl -v --cert ssl/client.p12:test --cacert ssl/rootCA.crt https://localhost:5000``` should return 200
+- import rootCA into keychain and set to always trust
+- import client.p12 into keychain
+- open https://localhost:5000 in browser
